@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GoogleApiService } from './google-api.service';
+import { GoogleOAuthService } from './OAuth/oauith-service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +9,12 @@ import { GoogleApiService } from './google-api.service';
 export class AppComponent {
   title = 'cinephila-ui';
 
-  constructor(private readonly google: GoogleApiService) {}
+  constructor(private readonly googleOAuth: GoogleOAuthService) {}
+
+  Login() {
+    this.googleOAuth.Login();
+  }
+  Logout() {
+    this.googleOAuth.Logout();
+  }
 }
