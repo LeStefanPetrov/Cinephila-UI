@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpBackend } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthConfig, OAuthService } from 'angular-oauth2-oidc';
 
@@ -15,10 +15,7 @@ const oAuthConfig: AuthConfig = {
   providedIn: 'root',
 })
 export class GoogleOAuthService {
-  constructor(
-    private readonly oauthService: OAuthService,
-    private http: HttpClient
-  ) {
+  constructor(private readonly oauthService: OAuthService) {
     this.oauthService = oauthService;
     this.Configure();
   }
@@ -39,5 +36,9 @@ export class GoogleOAuthService {
 
   CheckLoggedIn() {
     return this.oauthService.hasValidAccessToken();
+  }
+
+  GetToken() {
+    return this.oauthService.getIdToken();
   }
 }
