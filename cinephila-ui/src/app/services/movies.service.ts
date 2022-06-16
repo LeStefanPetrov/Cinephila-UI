@@ -10,13 +10,7 @@ export class MoviesService {
     private readonly oauthService: GoogleOAuthService
   ) {}
 
-  headers_object = new HttpHeaders().set(
-    'Authorization',
-    'Bearer ' + this.oauthService.GetToken()
-  );
-
   httpOptions = {
-    headers: this.headers_object,
     params: { page: 1, size: 10 },
   };
 
