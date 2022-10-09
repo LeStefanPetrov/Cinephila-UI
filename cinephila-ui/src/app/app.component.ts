@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { GoogleOAuthService } from './OAuth/oauth.service';
-import { MoviesService } from './services/movies.service';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +7,7 @@ import { MoviesService } from './services/movies.service';
   styleUrls: ['./app.component.css', '../styles.css'],
 })
 export class AppComponent {
-  title = 'cinephila-ui';
-
-  constructor(
-    private readonly googleOAuth: GoogleOAuthService,
-    private readonly moviesService: MoviesService
-  ) {
-    moviesService
-      .getMovies()
-      .subscribe((responseData) => console.log(responseData));
-  }
+  constructor(private readonly googleOAuth: GoogleOAuthService) {}
 
   Login() {
     this.googleOAuth.Login();

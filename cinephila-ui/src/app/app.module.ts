@@ -5,13 +5,14 @@ import { OAuthModule } from 'angular-oauth2-oidc';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 import { AuthInterceptor } from './Interceptors/auth.interceptor';
 import { GoogleOAuthService } from './OAuth/oauth.service';
 import { MoviesService } from './services/movies.service';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, HomepageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

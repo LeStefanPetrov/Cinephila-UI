@@ -1,0 +1,35 @@
+.weekly-picks-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 3.2rem 1.6rem;
+  list-style: none;
+  padding: 3.2rem 12.8rem;
+}
+
+.weekly-picks-item {
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.weekly-picks-item img {
+  display: block;
+  width: 100%;
+  transition: all 0.4s;
+}
+
+.weekly-picks-item:hover {
+  transform: scale(1.1);
+}
+
+.weekly-picks-item:hover {
+  border: 3.5px solid #e45a69;
+  transition: 0.3s;
+}
+
+.weekly-picks-heading {
+  padding: 0 12.8rem;
+  font-weight: 700;
+  color: #fff;
+  font-size: 2.4rem;
+  line-height: 1.2;
+}

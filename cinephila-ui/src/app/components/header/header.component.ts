@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { GoogleOAuthService } from '../OAuth/oauth.service';
+import { GoogleOAuthService } from '../../OAuth/oauth.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css', '../../styles.css'],
+  styleUrls: ['./header.component.css', '../../../styles.css'],
 })
 export class HeaderComponent implements OnInit {
   constructor(private readonly googleOAuth: GoogleOAuthService) {}
