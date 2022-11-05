@@ -11,6 +11,7 @@
 
 .logo {
   height: 3.6rem;
+  border-radius: 6px;
 }
 
 .main-nav-list {

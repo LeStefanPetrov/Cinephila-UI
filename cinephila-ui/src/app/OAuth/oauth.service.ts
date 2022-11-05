@@ -37,8 +37,4 @@ export class GoogleOAuthService {
   CheckLoggedIn() {
     return this.oauthService.hasValidAccessToken();
   }
-
-  GetToken() {
-    return this.oauthService.getIdToken();
-  }
 }

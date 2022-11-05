@@ -11,7 +11,6 @@ export class HomepageComponent implements OnInit {
   constructor(private readonly moviesService: MoviesService) {
     this.moviesService.getMovies().subscribe((movies) => {
       this.movies = movies;
-      console.log(this.movies);
     });
   }
 

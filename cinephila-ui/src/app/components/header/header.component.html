@@ -1,13 +1,13 @@
 <header class="header">
   <a href="#">
-    <img src="../assets/img/logo.png" alt="Cinephila Logo" class="logo">
+    <img src="../assets/img/logo.jpg" alt="Cinephila Logo" class="logo">
   </a>
 
   <nav class="main-nav">
     <ul class="main-nav-list">
-      <li *ngIf="!isLogged; else logged"><a class="main-nav-link nav-cta" href="#" (click)="Login()">Login</a></li>
+      <li *ngIf="!isLogged; else logged"><a class="main-nav-link nav-cta" href="#" (click)="Login()">Sign In</a></li>
       <ng-template #logged>
-        <li><a class="main-nav-link nav-cta" href="#" (click)="Logout()">Logout</a></li>
+        <li><a class="main-nav-link nav-cta" href="#" (click)="Logout()">Sign Out</a></li>
       </ng-template>
     </ul>
   </nav>
