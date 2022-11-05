@@ -10,9 +10,10 @@ import { AuthInterceptor } from './Interceptors/auth.interceptor';
 import { GoogleOAuthService } from './OAuth/oauth.service';
 import { MoviesService } from './services/movies.service';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomepageComponent],
+  declarations: [AppComponent, HeaderComponent, HomepageComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
