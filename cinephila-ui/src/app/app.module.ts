@@ -11,9 +11,10 @@ import { GoogleOAuthService } from './OAuth/oauth.service';
 import { MoviesService } from './services/movies.service';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomepageComponent, FooterComponent],
+  declarations: [AppComponent, HeaderComponent, HomepageComponent, FooterComponent, ProfileComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

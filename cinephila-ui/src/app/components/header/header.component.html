@@ -5,6 +5,7 @@
 
   <nav class="main-nav">
     <ul class="main-nav-list">
+      <li routerLinkActive="active"><a routerLink="/profile">Profile</a></li>
       <li *ngIf="!isLogged; else logged"><a class="main-nav-link nav-cta" href="#" (click)="Login()">Sign In</a></li>
       <ng-template #logged>
         <li><a class="main-nav-link nav-cta" href="#" (click)="Logout()">Sign Out</a></li>
