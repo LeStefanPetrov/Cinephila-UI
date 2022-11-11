@@ -5,12 +5,12 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { OAuthService } from 'angular-oauth2-oidc';
+import { OidcSecurityService } from 'angular-auth-oidc-client';
 import { Observable } from 'rxjs';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private oauthService: OAuthService) {}
+  constructor(private oauthService: OidcSecurityService) {}
 
   intercept(
     req: HttpRequest<any>,

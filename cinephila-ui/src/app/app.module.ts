@@ -1,8 +1,6 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { OAuthModule } from 'angular-oauth2-oidc';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -12,6 +10,7 @@ import { MoviesService } from './services/movies.service';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { AuthConfigModule } from './auth/auth-config.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, HomepageComponent, FooterComponent, ProfileComponent],
@@ -19,7 +18,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    OAuthModule.forRoot(),
+    AuthConfigModule,
   ],
   providers: [
     GoogleOAuthService,

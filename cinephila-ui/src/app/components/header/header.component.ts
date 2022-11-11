@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { GoogleOAuthService } from '../../OAuth/oauth.service';
 
 @Component({
@@ -7,7 +8,10 @@ import { GoogleOAuthService } from '../../OAuth/oauth.service';
   styleUrls: ['./header.component.css', '../../../styles.css'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private readonly googleOAuth: GoogleOAuthService) {}
+  user$: Observable<boolean> = new Observable<boolean>();
+  constructor(private readonly googleOAuth: GoogleOAuthService) {
+    this.user$ = googleOAuth.user$.asObservable();
+  }
   ngOnInit(): void {}
 
   Login() {
@@ -15,9 +19,5 @@ export class HeaderComponent implements OnInit {
   }
   Logout() {
     this.googleOAuth.Logout();
-  }
-
-  get isLogged() {
-    return this.googleOAuth.CheckLoggedIn();
   }
 }
