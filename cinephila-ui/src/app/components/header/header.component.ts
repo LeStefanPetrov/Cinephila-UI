@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { OidcClientNotification, OidcSecurityService, OpenIdConfiguration, UserDataResult } from 'angular-auth-oidc-client';
 import { Observable } from 'rxjs';
-import { GoogleOAuthService } from '../../OAuth/oauth.service';
 
 @Component({
   selector: 'app-header',
@@ -9,15 +9,26 @@ import { GoogleOAuthService } from '../../OAuth/oauth.service';
 })
 export class HeaderComponent implements OnInit {
   user$: Observable<boolean> = new Observable<boolean>();
-  constructor(private readonly googleOAuth: GoogleOAuthService) {
-    this.user$ = googleOAuth.user$.asObservable();
+  isAuthenticated = false;
+  
+  constructor(private readonly googleOAuth: OidcSecurityService) {
   }
-  ngOnInit(): void {}
+
+  ngOnInit(): void {
+
+    this.googleOAuth.isAuthenticated$.subscribe(({ isAuthenticated }) => {
+      this.isAuthenticated = isAuthenticated;
+      console.warn(this.googleOAuth.getConfiguration());
+      console.warn(this.googleOAuth.getIdToken());
+      console.warn(this.googleOAuth.getAccessToken());
+      console.warn('authenticated: ', isAuthenticated);
+    });
+  }
 
   Login() {
-    this.googleOAuth.Login();
+    this.googleOAuth.authorize();
   }
   Logout() {
-    this.googleOAuth.Logout();
+    this.googleOAuth.logoff();
   }
 }
