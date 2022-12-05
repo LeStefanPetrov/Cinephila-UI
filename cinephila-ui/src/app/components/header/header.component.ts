@@ -16,12 +16,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.googleOAuth.isAuthenticated$.subscribe(({ isAuthenticated }) => {
+    this.googleOAuth.checkAuth().subscribe(({ isAuthenticated }) => {
       this.isAuthenticated = isAuthenticated;
-      console.warn(this.googleOAuth.getConfiguration());
-      console.warn(this.googleOAuth.getIdToken());
-      console.warn(this.googleOAuth.getAccessToken());
-      console.warn('authenticated: ', isAuthenticated);
     });
   }
 
@@ -30,5 +26,6 @@ export class HeaderComponent implements OnInit {
   }
   Logout() {
     this.googleOAuth.logoff();
+    this.isAuthenticated = false;
   }
 }

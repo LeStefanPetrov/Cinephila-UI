@@ -18,8 +18,9 @@ export class AuthInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     if (!req.url.includes('localhost')) return next.handle(req);
 
-    let token = this.oauthService.getIdToken();
-
+    let token;
+    this.oauthService.getIdToken().subscribe(x => token = x);
+    console.log(token);
     if (token != null) {
       const modifiedRequest = req.clone({
         headers: req.headers.set('Authorization', `Bearer ${token}`),
