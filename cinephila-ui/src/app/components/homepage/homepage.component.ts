@@ -10,11 +10,11 @@ import { GoogleOAuthService } from 'src/app/OAuth/oauth.service';
 export class HomepageComponent implements OnInit {
   movies: Movie[] = [];
   constructor(private readonly moviesService: MoviesService , private readonly oauthService: GoogleOAuthService) {
-    
+  }
+
+  ngOnInit(): void {
     this.moviesService.getMovies().subscribe((movies) => {
       this.movies = movies;
     });
   }
-
-  ngOnInit(): void {}
 }

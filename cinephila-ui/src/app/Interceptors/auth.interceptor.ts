@@ -17,16 +17,20 @@ export class AuthInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     if (!req.url.includes('localhost')) return next.handle(req);
-
+    
     let token;
-    this.oauthService.getIdToken().subscribe(x => token = x);
-    console.log(token);
+    this.oauthService.getIdToken().subscribe((response) => {
+      token = response;
+    });
+    
     if (token != null) {
       const modifiedRequest = req.clone({
         headers: req.headers.set('Authorization', `Bearer ${token}`),
       });
-
+      
       return next.handle(modifiedRequest);
-    } else return next.handle(req);
+    } 
+
+    return next.handle(req);
   }
 }
