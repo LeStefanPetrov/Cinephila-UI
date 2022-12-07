@@ -71,7 +71,6 @@ body {
 
   /* Used to move the footer to the end of the Vieport in case there is not enough content */
   display: flex;
-  text-align: center;
   flex-direction: column;
   min-height: 100vh;
 }

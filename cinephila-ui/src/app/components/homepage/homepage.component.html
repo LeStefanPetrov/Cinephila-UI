@@ -11,4 +11,27 @@
       </li>
     </div>
   </div>
+
+  <div class="container">
+    <div class="carousel">
+      <ng-container>
+        <div class="movie-info">
+          <img src={{movies[currentSlide].posterPath}} class="carousel-img" />
+          <div class="detailed-information">
+            {{movies[currentSlide].name}}<br>
+            {{movies[currentSlide].yearOfCreation}}
+
+
+          </div>
+        </div>
+      </ng-container>
+
+      <button class="control prev" (click)="onPreviousClick()">
+        <span class="arrow left"></span>
+      </button>
+      <button class="control next" (click)="onNextClick()">
+        <span class="arrow right"></span>
+      </button>
+    </div>
+  </div>
 </section>
