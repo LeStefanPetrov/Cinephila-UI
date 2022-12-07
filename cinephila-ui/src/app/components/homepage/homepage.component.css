@@ -67,31 +67,6 @@
   border-radius: 10px;
 }
 
-.a {
-  transform: rotateY(0deg) translateZ(250px);
-  background: #ed1c24;
-}
-.b {
-  transform: rotateY(60deg) translateZ(250px);
-  background: #0072bc;
-}
-.c {
-  transform: rotateY(120deg) translateZ(250px);
-  background: #39b54a;
-}
-.d {
-  transform: rotateY(180deg) translateZ(250px);
-  background: #f26522;
-}
-.e {
-  transform: rotateY(240deg) translateZ(250px);
-  background: #630460;
-}
-.f {
-  transform: rotateY(300deg) translateZ(250px);
-  background: #8c6239;
-}
-
 .next,
 .prev {
   color: #444;
