@@ -7,13 +7,14 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class GoogleOAuthService {
   user$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  constructor(private readonly oauthService: OidcSecurityService) {
-  }
+  constructor(private readonly oauthService: OidcSecurityService) {}
 
   Configure() {
-    this.oauthService.checkAuth().subscribe(({ isAuthenticated, userData, accessToken, idToken }) => {
-      this.user$.next(isAuthenticated);
-    });
+    this.oauthService
+      .checkAuth()
+      .subscribe(({ isAuthenticated, userData, accessToken, idToken }) => {
+        this.user$.next(isAuthenticated);
+      });
   }
 
   Login() {
@@ -22,9 +23,5 @@ export class GoogleOAuthService {
 
   Logout() {
     this.oauthService.logoff();
-  }
-
-  CheckLoggedIn() {
-    return false;
   }
 }
