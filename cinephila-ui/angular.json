@@ -102,5 +102,7 @@
       }
     }
   },
-  "defaultProject": "cinephila-ui"
+  "cli": {
+    "analytics": false
+  }
 }
