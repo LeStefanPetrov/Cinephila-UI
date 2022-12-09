@@ -6,7 +6,7 @@ import { AuthModule } from 'angular-auth-oidc-client';
     imports: [AuthModule.forRoot({
         config: {
               authority: 'https://accounts.google.com',
-              redirectUrl: window.location.origin,
+              redirectUrl: window.location.origin + '/callback',
               postLogoutRedirectUri: window.location.origin,
               clientId:  '21758989588-o99527rg1tidhva82aigfg1u6ku81b6q.apps.googleusercontent.com',
               scope: 'openid email profile',
