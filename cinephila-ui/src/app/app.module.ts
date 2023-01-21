@@ -12,6 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AuthConfigModule } from './auth/auth-config.module';
 import { CallbackComponent } from './components/callback/callback.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { CallbackComponent } from './components/callback/callback.component';
     AppRoutingModule,
     HttpClientModule,
     AuthConfigModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     GoogleOAuthService,

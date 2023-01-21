@@ -81,6 +81,12 @@ body {
   margin: 0 auto;
 }
 
+.container-lg {
+  max-width: 180rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
 /* Used to move the footer to the end of the Vieport in case there is not enough content */
 .body-wrapper {
   flex: 1;

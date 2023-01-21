@@ -1,4 +1,36 @@
-<section class="weekly-picks">
+<section id="carousel">
+  <div class="container-lg">
+    <div class="flex-container">
+      <div>
+        <button class="control" (click)="onPreviousClick()">
+          <span class="arrow left"></span>
+        </button>
+      </div>
+      <div class="carousel">
+        <div class="background-movie" @carouselAnimation>
+          <img [src]="movies[previousSlide].posterPath" class="background-movie-poster" />
+        </div>
+        <div class="movie-info" @carouselAnimation>
+          <img [src]="movies[currentSlide].posterPath" class="carousel-poster" />
+          <div class="detailed-information">
+            {{movies[currentSlide].name}}<br>
+            {{movies[currentSlide].yearOfCreation}}
+          </div>
+        </div>
+        <div class="background-movie" @carouselAnimation>
+          <img [src]="movies[nextSlide].posterPath" class="background-movie-poster" />
+        </div>
+      </div>
+      <div>
+        <button class="control" (click)="onNextClick()">
+          <span class="arrow right"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="weekly-picks" class="weekly-picks">
   <div class="container">
     <h2 class="weekly-picks-heading">Our weekly picks</h2>
   </div>
@@ -9,29 +41,6 @@
           <img src={{movie.posterPath}} alt={{movie.name}} />
         </figure>
       </li>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="carousel">
-      <ng-container>
-        <div class="movie-info">
-          <img src={{movies[currentSlide].posterPath}} class="carousel-img" />
-          <div class="detailed-information">
-            {{movies[currentSlide].name}}<br>
-            {{movies[currentSlide].yearOfCreation}}
-
-
-          </div>
-        </div>
-      </ng-container>
-
-      <button class="control prev" (click)="onPreviousClick()">
-        <span class="arrow left"></span>
-      </button>
-      <button class="control next" (click)="onNextClick()">
-        <span class="arrow right"></span>
-      </button>
     </div>
   </div>
 </section>

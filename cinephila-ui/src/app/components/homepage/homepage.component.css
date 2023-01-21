@@ -9,6 +9,7 @@
 .weekly-picks-item {
   overflow: hidden;
   border-radius: 6px;
+  box-shadow: 2px 24px 32px -4px rgba(0, 0, 0, 0.76);
 }
 
 .weekly-picks-item img {
@@ -46,11 +47,12 @@
 }
 
 .carousel {
+  display: flex;
   height: 100%;
   width: 100%;
-  position: absolute;
   transform-style: preserve-3d;
   transition: transform 1s;
+  justify-content: space-between;
 }
 
 .item {
@@ -115,7 +117,6 @@
   border: none;
   background-color: transparent;
   outline: 0;
-  position: absolute;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -160,9 +161,10 @@
   overflow: hidden;
   height: 60rem;
   max-height: 60rem;
+  justify-content: center;
 }
 
-.carousel-img {
+.carousel-poster {
   display: inline;
   height: 100%;
   border-radius: 10px;
@@ -173,11 +175,29 @@
   margin: auto;
   display: flex;
   height: 70%;
-  width: 60%;
+  width: 40%;
   background-color: white;
   border-radius: 10px;
+  box-shadow: 2px 24px 32px -4px rgba(0, 0, 0, 0.76);
 }
 
 .detailed-information {
   padding: 1.2rem 2.4rem;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.background-movie {
+  align-self: center;
+}
+
+.background-movie-poster {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  border-radius: 10px;
+  box-shadow: 2px 24px 32px -4px rgba(0, 0, 0, 0.75);
 }
