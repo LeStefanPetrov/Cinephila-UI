@@ -11,10 +11,17 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AuthConfigModule } from './auth/auth-config.module';
-import { CallbackComponent } from './callback/callback.component';
+import { CallbackComponent } from './components/callback/callback.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomepageComponent, FooterComponent, ProfileComponent, CallbackComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    HomepageComponent,
+    FooterComponent,
+    ProfileComponent,
+    CallbackComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
