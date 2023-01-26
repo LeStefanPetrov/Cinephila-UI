@@ -10,11 +10,9 @@ export class GoogleOAuthService {
   constructor(private readonly oauthService: OidcSecurityService) {}
 
   Configure() {
-    this.oauthService
-      .checkAuth()
-      .subscribe(({ isAuthenticated, userData, accessToken, idToken }) => {
-        this.user$.next(isAuthenticated);
-      });
+    this.oauthService.checkAuth().subscribe(({ isAuthenticated }) => {
+      this.user$.next(isAuthenticated);
+    });
   }
 
   Login() {

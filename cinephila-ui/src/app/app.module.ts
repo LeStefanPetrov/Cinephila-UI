@@ -13,6 +13,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AuthConfigModule } from './auth/auth-config.module';
 import { CallbackComponent } from './components/callback/callback.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UsersService } from './services/users.service';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   providers: [
     GoogleOAuthService,
     MoviesService,
+    UsersService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

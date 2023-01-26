@@ -3,6 +3,8 @@ import { MoviesService } from '../../services/movies.service';
 import { Movie } from 'src/app/models/movie.model';
 import { scaleIn, scaleOut } from '../../animations/carousel.animations';
 import { transition, trigger, useAnimation } from '@angular/animations';
+import { UsersService } from 'src/app/services/users.service';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-homepage',
@@ -25,9 +27,15 @@ export class HomepageComponent implements OnInit {
   currentSlide = 1;
   nextSlide = 2;
 
-  constructor(private readonly moviesService: MoviesService) {
+  constructor(
+    private readonly moviesService: MoviesService,
+    private readonly usersService: UsersService
+  ) {
     this.moviesService.getMovies().subscribe((movies) => {
       this.movies = movies;
+    });
+    this.usersService.getUser().subscribe((user) => {
+      console.log(user);
     });
   }
 
