@@ -15,12 +15,7 @@ export class CallbackComponent implements OnInit {
 
   ngOnInit(): void {
     this.googleOAuth.checkAuth().subscribe(({ isAuthenticated }) => {
-      console.log('is auth:' + isAuthenticated);
-
-      if (!!isAuthenticated) {
-        console.log('redirected');
-        this.router.navigate(['/']);
-      }
+      if (!!isAuthenticated) this.router.navigate(['/']);
     });
   }
 }
