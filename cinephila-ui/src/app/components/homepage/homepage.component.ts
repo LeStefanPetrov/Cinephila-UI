@@ -4,7 +4,7 @@ import { Movie } from 'src/app/models/movie.model';
 import { scaleIn, scaleOut } from '../../animations/carousel.animations';
 import { transition, trigger, useAnimation } from '@angular/animations';
 import { UsersService } from 'src/app/services/users.service';
-import { User } from 'src/app/models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -29,13 +29,14 @@ export class HomepageComponent implements OnInit {
 
   constructor(
     private readonly moviesService: MoviesService,
-    private readonly usersService: UsersService
+    private readonly usersService: UsersService,
+    private router: Router
   ) {
     this.moviesService.getMovies().subscribe((movies) => {
       this.movies = movies;
     });
-    this.usersService.getUser().subscribe((user) => {
-      console.log(user);
+    this.usersService.getUser().subscribe((response) => {
+      if (response.status === 201) this.router.navigate(['/profile']);
     });
   }
 
