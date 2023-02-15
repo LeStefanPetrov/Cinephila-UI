@@ -14,6 +14,7 @@ import { AuthConfigModule } from './auth/auth-config.module';
 import { CallbackComponent } from './components/callback/callback.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UsersService } from './services/users.service';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -30,11 +31,13 @@ import { UsersService } from './services/users.service';
     HttpClientModule,
     AuthConfigModule,
     BrowserAnimationsModule,
+    MatInputModule,
   ],
   providers: [
     GoogleOAuthService,
     MoviesService,
     UsersService,
+    MatInputModule,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
