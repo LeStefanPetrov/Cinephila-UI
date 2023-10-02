@@ -44,7 +44,7 @@ Medium: 11px
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
 
-@import "../node_modules/@angular/material/prebuilt-themes/purple-green.css";
+@import "../src/app/styles/cinephila-theme.scss";
 
 * {
   padding: 0;
@@ -59,6 +59,7 @@ html {
 
   overflow-x: hidden;
   scroll-behavior: smooth;
+  margin: 0;
 }
 
 body {
@@ -66,7 +67,8 @@ body {
   line-height: 1;
   font-weight: 400;
   color: #555;
-  background-color: #0c1226;
+  background: linear-gradient(#00001a, #333333);
+  margin: 0;
 
   /* Only works if there is nothing absolutely positioned in relation to body */
   overflow-x: hidden;
