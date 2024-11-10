@@ -23,10 +23,11 @@ import { Router } from '@angular/router';
 })
 export class HomepageComponent implements OnInit {
   movies: Movie[] = [];
-  previousSlide = 0;
-  currentSlide = 1;
-  nextSlide = 2;
-
+  currentSlide = 0;
+  leftTwoSlide = 0;
+  leftOneSlide = 0;
+  rightOneSlide = 0;
+  rightTwoSlide = 0;
   constructor(
     private readonly moviesService: MoviesService,
     private readonly usersService: UsersService,
@@ -34,6 +35,7 @@ export class HomepageComponent implements OnInit {
   ) {
     this.moviesService.getMovies().subscribe((movies) => {
       this.movies = movies;
+      this.updateIndices(); // Initialize all slide positions
     });
     this.usersService.getUser().subscribe((response) => {
       if (response.status === 201) this.router.navigate(['/profile']);
@@ -42,22 +44,25 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  private updateIndices() {
+    const length = this.movies.length;
+
+    this.leftTwoSlide = (this.currentSlide - 2 + length) % length;
+    this.leftOneSlide = (this.currentSlide - 1 + length) % length;
+    this.rightOneSlide = (this.currentSlide + 1) % length;
+    this.rightTwoSlide = (this.currentSlide + 2) % length;
+  }
+
   onPreviousClick() {
-    this.nextSlide = this.currentSlide;
-    const previous =
-      this.currentSlide - 1 < 0
-        ? this.movies.length - 1
-        : this.currentSlide - 1;
-    this.currentSlide = previous;
-    this.previousSlide =
-      previous - 1 < 0 ? this.movies.length - 1 : previous - 1;
+    // Move currentSlide backward by one and update other indices
+    this.currentSlide =
+      (this.currentSlide - 1 + this.movies.length) % this.movies.length;
+    this.updateIndices();
   }
 
   onNextClick() {
-    this.previousSlide = this.currentSlide;
-    const next =
-      this.currentSlide + 1 === this.movies.length ? 0 : this.currentSlide + 1;
-    this.currentSlide = next;
-    this.nextSlide = next + 1 === this.movies.length ? 0 : next + 1;
+    // Move currentSlide forward by one and update other indices
+    this.currentSlide = (this.currentSlide + 1) % this.movies.length;
+    this.updateIndices();
   }
 }

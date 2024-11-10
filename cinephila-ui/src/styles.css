@@ -27,7 +27,7 @@ Large: 1.8
 - Tints: #e45a69
 - Shades: 
 - Accents:
-- Greys
+- Greys: #808080
 
 --- 05 SHADOWS
 
@@ -56,11 +56,11 @@ html {
   /* 10px / 16px = 0.625 = 62.5% */
   /* Percentage of user's browser font-size setting */
   font-size: 62.5%;
-
   overflow-x: hidden;
   scroll-behavior: smooth;
   margin: 0;
-  min-width: 1600px;
+  min-width: 1920px;
+  max-width: 1920px;
 }
 
 body {

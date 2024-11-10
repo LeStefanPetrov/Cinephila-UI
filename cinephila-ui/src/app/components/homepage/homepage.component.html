@@ -8,17 +8,54 @@
       </div>
       <div class="carousel">
         <div class="background-movie" @carouselAnimation>
-          <img [src]="movies[previousSlide].posterPath" class="background-movie-poster" />
+          <img [src]="movies[leftTwoSlide].posterPath" class="third-tier-movie-poster" />
+        </div>
+        <div class="background-movie" @carouselAnimation>
+          <img [src]="movies[leftOneSlide].posterPath" class="second-tier-movie-poster" />
         </div>
         <div class="movie-info" @carouselAnimation>
           <img [src]="movies[currentSlide].posterPath" class="carousel-poster" />
           <div class="detailed-information">
-            {{movies[currentSlide].name}}<br>
-            {{movies[currentSlide].yearOfCreation}}
+            <div class="movie-name">
+              {{movies[currentSlide].name}}
+              <br>
+            </div>
+            <div class="movie-details">
+              <div class="left-column">
+                <p><strong>Release date</strong><br>June 17, 2016</p>
+                <p><strong>Directed by</strong><br>Steven Spielberg</p>
+                <p><strong>Starring</strong><br>Mark Rylance<br>Ruby Barnhill<br>Penelope Wilton<br>Jemaine
+                  Clement<br><span class="more-actors">+6 more</span></p>
+              </div>
+              <div class="right-column">
+                <p><strong>Genre</strong><br><span class="genre">Fantasy, Fiction</span></p>
+                <p><strong>Synopsis</strong><br>Ten-year-old Sophie is in for the adventure of a lifetime when she meets
+                  the Big Friendly Giant (Mark Rylance). Naturally scared at first, the young girl soon realizes that
+                  the 24-foot behemoth is actually...</p>
+                <button class="see-more">See More</button>
+              </div>
+            </div>
+            <div class="ratings">
+              <div class="rating">
+                <span class="rating-score">7/10</span>
+                <p>Ratings by IMDb</p>
+              </div>
+              <div class="rating">
+                <span class="rating-score">67%</span>
+                <p>MetaCritic</p>
+              </div>
+              <div class="rating">
+                <span class="rating-stars">★★★★☆</span>
+                <p>from blu users</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="background-movie" @carouselAnimation>
-          <img [src]="movies[nextSlide].posterPath" class="background-movie-poster" />
+          <img [src]="movies[rightOneSlide].posterPath" class="second-tier-movie-poster" />
+        </div>
+        <div class="background-movie" @carouselAnimation>
+          <img [src]="movies[rightTwoSlide].posterPath" class="third-tier-movie-poster" />
         </div>
       </div>
       <div>
