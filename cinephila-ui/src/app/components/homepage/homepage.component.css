@@ -1,30 +1,30 @@
-.weekly-picks-grid {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 3.2rem 1.6rem;
+.weekly-picks-flex {
+  display: flex;
+  gap: 1.2rem;
   list-style: none;
-  padding: 3.2rem 12.8rem;
+  padding: 1.6rem 12.8rem;
+  justify-content: space-around;
 }
 
 .weekly-picks-item {
+  position: relative;
   overflow: hidden;
   border-radius: 6px;
   box-shadow: 2px 24px 32px -4px rgba(0, 0, 0, 0.76);
+  min-width: 10rem;
 }
 
 .weekly-picks-item img {
   display: block;
   width: 100%;
-  transition: all 0.4s;
+  height: 100%;
+  transition: transform 0.4s ease;
+  overflow: hidden;
 }
 
 .weekly-picks-item:hover {
   transform: scale(1.1);
-}
-
-.weekly-picks-item:hover {
-  border: 3.5px solid #e45a69;
-  transition: 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .weekly-picks-heading {
