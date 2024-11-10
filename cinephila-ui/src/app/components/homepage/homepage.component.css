@@ -1,9 +1,13 @@
-.weekly-picks-flex {
-  display: flex;
+.weekly-picks-grid {
+  display: grid;
   gap: 1.2rem;
   list-style: none;
   padding: 1.6rem 12.8rem;
   justify-content: space-around;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.6rem;
+  row-gap: 3.2rem;
 }
 
 .weekly-picks-item {

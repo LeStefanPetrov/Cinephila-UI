@@ -69,15 +69,20 @@
 
 <section id="weekly-picks" class="weekly-picks">
   <div class="container">
-    <h2 class="weekly-picks-heading">Our weekly picks</h2>
+    <h2 class="weekly-picks-heading">Discover Movies</h2>
   </div>
   <div class="container">
-    <div class="weekly-picks-flex">
-      <li *ngFor="let movie of movies | slice:0:6; index as i; first as isFirst">
+    <div class="weekly-picks-grid">
+      <li *ngFor="let movie of movies; index as i; first as isFirst">
         <figure class="weekly-picks-item">
           <img src={{movie.posterPath}} alt={{movie.name}} />
         </figure>
       </li>
     </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <h2 class="weekly-picks-heading">Popular Reviews</h2>
   </div>
 </section>
