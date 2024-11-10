@@ -6,3 +6,13 @@
   line-height: 1.2;
   text-align: left;
 }
+
+::ng-deep .mdc-text-field {
+  background: #2c3440 !important;
+  color: white !important;
+  transform: scale(0.9);
+}
+
+::ng-deep .mat-mdc-input-element {
+  color: white !important;
+}

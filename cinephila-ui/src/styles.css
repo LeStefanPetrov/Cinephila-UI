@@ -60,6 +60,7 @@ html {
   overflow-x: hidden;
   scroll-behavior: smooth;
   margin: 0;
+  min-width: 1600px;
 }
 
 body {
@@ -67,7 +68,7 @@ body {
   line-height: 1;
   font-weight: 400;
   color: #555;
-  background: linear-gradient(#00001a, #333333);
+  background: linear-gradient(#00001a, #2c3440);
   margin: 0;
 
   /* Only works if there is nothing absolutely positioned in relation to body */
