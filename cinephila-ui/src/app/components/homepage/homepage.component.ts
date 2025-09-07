@@ -7,19 +7,20 @@ import { UsersService } from 'src/app/services/users.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css', '../../../styles.css'],
-  animations: [
-    trigger('carouselAnimation', [
-      transition('void => *', [
-        useAnimation(scaleIn, { params: { time: '1300ms' } }),
-      ]),
-      transition('* => void', [
-        useAnimation(scaleOut, { params: { time: '1300ms' } }),
-      ]),
-    ]),
-  ],
+    selector: 'app-homepage',
+    templateUrl: './homepage.component.html',
+    styleUrls: ['./homepage.component.css', '../../../styles.css'],
+    animations: [
+        trigger('carouselAnimation', [
+            transition('void => *', [
+                useAnimation(scaleIn, { params: { time: '1300ms' } }),
+            ]),
+            transition('* => void', [
+                useAnimation(scaleOut, { params: { time: '1300ms' } }),
+            ]),
+        ]),
+    ],
+    standalone: false
 })
 export class HomepageComponent implements OnInit {
   movies: Movie[] = [];

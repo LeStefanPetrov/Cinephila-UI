@@ -3,9 +3,10 @@ import { OidcSecurityService } from 'angular-auth-oidc-client';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css', '../../../styles.css'],
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.css', '../../../styles.css'],
+    standalone: false
 })
 export class HeaderComponent implements OnInit {
   user$: Observable<boolean> = new Observable<boolean>();

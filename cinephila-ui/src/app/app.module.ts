@@ -1,4 +1,4 @@
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,34 +16,28 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UsersService } from './services/users.service';
 import { MatInputModule } from '@angular/material/input';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    HomepageComponent,
-    FooterComponent,
-    ProfileComponent,
-    CallbackComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    AuthConfigModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-  ],
-  providers: [
-    GoogleOAuthService,
-    MoviesService,
-    UsersService,
-    MatInputModule,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true,
-    },
-  ],
-  bootstrap: [AppComponent],
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HeaderComponent,
+        HomepageComponent,
+        FooterComponent,
+        ProfileComponent,
+        CallbackComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        AuthConfigModule,
+        BrowserAnimationsModule,
+        MatInputModule], providers: [
+        GoogleOAuthService,
+        MoviesService,
+        UsersService,
+        MatInputModule,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptor,
+            multi: true,
+        },
+        provideHttpClient(withInterceptorsFromDi()),
+    ] })
 export class AppModule {}
